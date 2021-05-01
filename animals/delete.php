@@ -17,12 +17,12 @@ require_once '../components/db_connect.php';
 
 if ($_GET['id']) {
    $id = $_GET['id'];
-   $sql = "SELECT * FROM products WHERE id = {$id}" ;
+   $sql = "SELECT * FROM animals WHERE id = {$id}" ;
    $result = $connect->query($sql);
    $data = $result->fetch_assoc();
    if ($result->num_rows == 1) {
     $name = $data['name'];
-    $price = $data['price'];
+    $description = $data['description'];
     $picture = $data['picture'];
 } else {
     header("location: error.php");
@@ -38,6 +38,7 @@ header("location: error.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete User</title>
+    <link rel="stylesheet" href="../style/style.css?ver=<?php echo time(); ?>">
     <?php require_once '../components/boot.php'?>
     <style type= "text/css">
        fieldset {

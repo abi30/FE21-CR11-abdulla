@@ -17,7 +17,6 @@ if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
 $res = mysqli_query($connect, "SELECT * FROM user WHERE id=" . $_SESSION['user']);
 $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
-$connect->close();
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +25,8 @@ $connect->close();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome - <?php echo $row['first_name']; ?></title>
+        <link rel="stylesheet" href="style/style.css?ver=<?php echo time(); ?>">
+
         <?php require_once 'components/boot.php'?>
         <style>
             .userImage{
@@ -39,6 +40,13 @@ $connect->close();
         </style>
     </head>
     <body>
+
+
+<?php require_once "nav.php"?>
+$connect->close();
+
+
+
         <div class="container">
             <div class="hero">
                 <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">

@@ -44,7 +44,7 @@ if (isset($_POST['btn-login'])) {
 
         $password = hash('sha256', $pass); // password hashing
 
-        $sqlSelect = "SELECT id, first_name, password, status FROM user WHERE email = ? ";
+        $sqlSelect = "SELECT id, first_name, password, status FROM user WHERE email = ? limit 1";
         $stmt = $connect->prepare($sqlSelect);
         $stmt->bind_param("s", $email);
         $work = $stmt->execute();
@@ -53,7 +53,7 @@ if (isset($_POST['btn-login'])) {
         $count = $result->num_rows;
         if ($count == 1 && $row['password'] == $password) {
             if($row['status'] == 'adm'){
-                $_SESSION['adm'] = $row['id'];           
+                $_SESSION['adm'] = $row['id'];        
                 header( "Location: dashboard.php");}
             else{
                 $_SESSION['user'] = $row['id']; 
@@ -73,30 +73,59 @@ $connect->close();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login & Registration System</title>
+        <link rel="stylesheet" href="style/style.css?ver=<?php echo time(); ?>">
+
         <?php require_once 'components/boot.php'?>
     </head>
     <body>
+    <?php require_once 'nav.php';  ?>
         <div class="container">
       
-            <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-                <h2>LogIn</h2>
-                <hr/>
-                <?php
-                if (isset($errMSG)) {
-                    echo $errMSG;
-                }
-                ?>
-        
-                <input type="email" autocomplete="off" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>"  maxlength="40" />
-                <span class="text-danger"><?php echo $emailError; ?></span>
 
-                <input type="password" name="pass"  class="form-control" placeholder="Your Password" maxlength="15"  />
-                <span class="text-danger"><?php echo $passError; ?></span>
-                <hr/>
-                <button button class="btn btn-block btn-primary" type="submit" name="btn-login">Sign In</button>
-                <hr/>
-                <a href="register.php">Not registered yet? Click here</a>
-            </form>
+
+
+
+      
+
+<div class="col text-center d-flex justify-content-center m-4">
+
+
+
+        <div class="box">
+  <h2>Login</h2>
+  <form class="w-100 form-box" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+            
+              
+            <hr/>
+            <span class="text-danger"> <?php
+            if (isset($errMSG)) {
+                echo $errMSG; 
+            }
+            ?></span> 
+           
+    <div class="inputBox">
+        <input type="email" autocomplete="off"  name="email"value="<?php echo  $email; ?>">
+        <span class="text-danger"><?php echo $emailError; ?></span> 
+        <label>Username</label>
+    </div>
+    <div class="inputBox">
+        <input type="password" name="pass" value=""/>
+        <span class="text-danger"><?php echo $passError; ?></span>
+        <label>Password</label>
+    </div>
+        <input type="submit" name="btn-login" value="Sign In">
+        <a  class="link-light" href="register.php">Not registered yet? Click here</a>
+	
+
+
+            </form> 
+            </div>
+           
+     </div>
+
+
+
+          
         </div>
     </body>
 </html>

@@ -3,7 +3,7 @@
 $localhost = "localhost";
 $username = "root";
 $password = "";
-$dbname = "crud_login";
+$dbname = "cr11_petadoption_abdulla";
 
 // create connection
 $connect = new  mysqli($localhost, $username, $password, $dbname);

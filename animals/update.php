@@ -16,13 +16,19 @@ require_once '../components/db_connect.php';
 
 if ($_GET['id']) {
     $id = $_GET['id'];
-    $sql = "SELECT * FROM products WHERE id = {$id}";
+    $sql = "SELECT * FROM animals WHERE id = {$id}";
     $result = $connect->query($sql);
     if ($result->num_rows == 1) {
         $data = $result->fetch_assoc();
         $name = $data['name'];
-        $price = $data['price'];
         $picture = $data['picture'];
+        $description = $data['description'];
+        $availability=$data['availability'];
+        $origin=$data['origin'];
+        $location=$data['location'];
+        $age=$data['age'];
+        $size=$data['size'];
+        $hobbies=$data['hobbies'];
         $supplier = $data['fk_supplierId'];
 
         $resultSup = mysqli_query($connect, "SELECT * FROM supplier");
@@ -49,6 +55,7 @@ if ($_GET['id']) {
 <html>
 <head>
    <title>Edit Product</title>
+   <link rel="stylesheet" href="../style/style.css?ver=<?php echo time(); ?>">
    <?php require_once '../components/boot.php'?>
    <style type= "text/css">
        fieldset {
@@ -72,13 +79,56 @@ if ($_GET['id']) {
                <td><input class="form-control" type="text"  name="name" placeholder ="Product Name" value="<?php echo $name ?>"  /></td>
            </tr>
            <tr>
-               <th>Price</th>
-               <td><input class="form-control" type= "number" step="any" name="price"  placeholder="Price" value ="<?php echo $price ?>" /></td>
-           </tr>
-           <tr>
                <th>Picture</th>
                <td><input class="form-control" type="file" name= "picture" /></td>
            </tr>
+           <tr>
+           <th>Description</th>
+               <td><input class='form-control' type="text" step="any" name= "description" placeholder="Description" value="<?php echo $description ?>" /></td>
+           </tr>
+
+
+
+
+
+
+
+
+
+
+           <tr>
+               <th>Availability</th>
+               <td><input class='form-control' type="number" step="any" name= "availability" placeholder="Availability" value="<?php echo $availability?>" /></td>
+           </tr>
+           <tr>
+               <th>Origin</th>
+               <td><input class='form-control' type="text" step="any" name= "origin" placeholder="Origin"  value="<?php echo $origin?>"/></td>
+           </tr>
+           <tr>
+               <th>Location</th>
+               <td><input class='form-control' type="text" step="any" name= "location" placeholder="Location" value="<?php echo $location?>" /></td>
+           </tr>
+           <tr>
+               <th>Age</th>
+               <td><input class='form-control' type="number" step="any" name= "age" placeholder="Age" value="<?php echo $age?>"/></td>
+           </tr>
+           <tr>
+               <th>Size</th>
+               <td><input class='form-control' type="text" step="any" name="size" placeholder="size" value="<?php echo $size;?>" /></td>
+           </tr>
+           <tr>
+               <th>Hobbies</th>
+               <td><input class='form-control' type="text" step="any" name= "hobbies" placeholder="Hobbies" value="<?php echo $hobbies?>" /></td>
+           </tr>
+
+
+
+
+
+
+
+
+
            <tr>
                <th>Supplier</th>
                <td>

@@ -51,6 +51,7 @@ $connect->close();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Delete User</title>
+        <link rel="stylesheet" href="style/style.css?ver=<?php echo time(); ?>">
         <?php require_once 'components/boot.php'?>
         <style type= "text/css">
             fieldset {

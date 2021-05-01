@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Error</title>
         <?php require_once 'components/boot.php'?>    
+        <link rel="stylesheet" href="../style/style.css?ver=<?php echo time(); ?>">
     </head>
     <body>
         <div class="container">  

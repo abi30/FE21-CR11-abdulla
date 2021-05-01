@@ -20,7 +20,7 @@ if ($_POST) {
     $picture = $_POST['picture'];
     ($picture =="product.png")?: unlink("../../pictures/$picture");
 
-   $sql = "DELETE FROM products WHERE id = {$id}";
+   $sql = "DELETE FROM animals WHERE id = {$id}";
    if ($connect->query($sql) === TRUE) {
     $class = "success";
     $message = "Successfully Deleted!";
@@ -38,6 +38,8 @@ header("location: ../error.php");
 <head>
     <meta charset="UTF-8">
     <title>Delete</title>
+    <link rel="stylesheet" href="../../style/style.css?ver=<?php echo time(); ?>">
+
     <?php require_once '../../components/boot.php'?>  
 </head>
 <body>
