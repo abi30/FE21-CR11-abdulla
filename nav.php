@@ -14,66 +14,7 @@
            echo' <a class="btn m-2 btn-warning border border-white" id="search" type="button" href="register.php"?register">Register</a>';
         
            
-        }elseif(isset($_SESSION['adm'])){
-          
-         
-          $res=mysqli_query($connect, "SELECT * FROM user WHERE id=".$_SESSION['adm']);
-          $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
-          
-          
-          echo'
-          <p class="">'.$userRow['first_name'].'</p> 
-          <p class="">'.$userRow['last_name'].'</p>
-          <p class="">'.$userRow['picture'].'</p>
-          
-          <a href="profile.php?id='.$userRow['id'].'">
-          <img class="m-2"src="picture/'.$userRow['picture'].'" style = " width:50px; height:50px; border-radius:50%;"> </a>
-          ';
-           
-        
-         
-      
-
-        } elseif(isset($_SESSION['user'])){
-
-
-     
-            echo'
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                 <li class="nav-item">
-                 <a class="nav-link" id="desc" type="button" href="library.php" >Library</a>
-                 </li>
-                 <li class="nav-item">
-                 <a class="nav-link" id="asc" type="button" href="create.php?page=index.php">Add Items</a>
-                 </li>
-                 <li class="nav-item">
-                 <a class="nav-link"aria-current="page" href="index.php">Database</a>
-                 </li>
-                 <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 Media
-               </a>
-               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                 <li><a class="dropdown-item" href="type_book.php">BOOKs</a></li>
-                 <li><a class="dropdown-item" href="type_cd.php">CDs</a></li>
-                 <li><a class="dropdown-item" href="type_dvd.php">DVDs</a></li>
-               </ul>
-             </li>
-                 </ul>
-                
-                  
-                 <p class="">'.$row['first_name'].'</p>
-               
-             
-                  <a href="profile.php">
-               <img class="m-2"src="pictures/'.$row['picture'].'" style = " width:50px; height:50px; border-radius:50%;"> </a>';
-            
-             
-                   echo'<a class="btn btn-danger border border-white" id="search" type="button" href="logout.php?logout">Sign Out</a>';
-
-
-        }
-           
+        } 
            
            
            ?>

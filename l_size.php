@@ -99,7 +99,7 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
         <div class="hero">
         <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
         </div>
-        <h2> Hi <?php echo $row['first_name' ]; ?>, take a look at our cats!</h2>
+        <h2> Hi <?php echo $row['first_name' ]; ?> ! Here you can find all large animals.</h2>
     </div>
 
 
@@ -123,7 +123,7 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
   
    
       <?php
-              $sql = "SELECT * FROM animals WHERE availability > 0";
+              $sql = "SELECT * FROM animals WHERE  size ='large'";
               $result = $connect->query($sql);
               $tbody="";
               if($result->num_rows > 0) {
@@ -163,7 +163,8 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
               <div class="card-footer">
                 <h6>Klick More to show detailed information of this animal.</h6>
               <a href="details.php?id='.$row2['id'].'"><button class="btn btn-warning border border-dark" type="button">More</button></a><hr>
-            
+
+
               </div>
           </div>
           </div>

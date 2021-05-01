@@ -138,7 +138,7 @@ if (isset($_SESSION["adm"])) {
     echo'
     <p class="">'.$userRow['first_name'].'</p>
     
-    <a href="profile.php?id='.$userRow['id'].'">
+    <a href="dashboard.php?id='.$userRow['id'].'">
     <img class="m-2"src="../pictures/'.$userRow['picture'].'" style = " width:50px; height:50px; border-radius:50%;"> </a>
     ';
     

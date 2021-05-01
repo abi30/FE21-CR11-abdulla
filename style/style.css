@@ -32,10 +32,12 @@
     body {
         margin: 0;
         padding: 0;
-        background: url(https://picsum.photos/2500/1500?image=1041);
+        background: url(https://images.unsplash.com/photo-1549379702-9692e37d2e58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1490&q=80) !important;
         background-size: cover;
         font-family: sans-serif;
+     
         background-repeat: no-repeat;
+        
       }
       
       .box {
@@ -129,3 +131,6 @@
         background-color: #1cb1f5;
       }
       
+      .container h2,p.h2{
+        color:#fff;
+      }

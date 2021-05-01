@@ -23,14 +23,14 @@ if ($_POST) {
 
 
     $picture = $_POST['picture'];
-    $name = $_POST['name'];
-    $description = $_POST['description'];
-    $availability=$_POST['availability'];
-    $origin=$_POST['origin'];
-    $location=$_POST['location'];
+    $name = htmlspecialchars($_POST['name']);
+    $description = htmlspecialchars($_POST['description']);
+    $availability=htmlspecialchars($_POST['availability']);
+    $origin=htmlspecialchars($_POST['origin']);
+    $location=htmlspecialchars($_POST['location']);
     $age=$_POST['age'];
-    $size=$_POST['size'];
-    $hobbies=$_POST['hobbies'];
+    $size=htmlspecialchars($_POST['size']);
+    $hobbies=htmlspecialchars($_POST['hobbies']);
   
 
 

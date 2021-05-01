@@ -20,15 +20,15 @@ if ($_GET['id']) {
     $result = $connect->query($sql);
     if ($result->num_rows == 1) {
         $data = $result->fetch_assoc();
-        $name = $data['name'];
+        $name = htmlspecialchars($data['name']);
         $picture = $data['picture'];
-        $description = $data['description'];
+        $description = htmlspecialchars($data['description']);
         $availability=$data['availability'];
-        $origin=$data['origin'];
-        $location=$data['location'];
+        $origin=htmlspecialchars($data['origin']);
+        $location=htmlspecialchars($data['location']);
         $age=$data['age'];
         $size=$data['size'];
-        $hobbies=$data['hobbies'];
+        $hobbies=htmlspecialchars($data['hobbies']);
         $supplier = $data['fk_supplierId'];
 
         $resultSup = mysqli_query($connect, "SELECT * FROM supplier");
@@ -122,7 +122,7 @@ if ($_GET['id']) {
            </tr>
 
 
-
+htmlcharectes()
 
 
 
