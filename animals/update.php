@@ -33,21 +33,34 @@ if ($_GET['id']) {
 
         $resultSup = mysqli_query($connect, "SELECT * FROM supplier");
         $supList = "";
+
+
+
         if(mysqli_num_rows($resultSup) > 0){
+
             while ($row = $resultSup->fetch_array(MYSQLI_ASSOC)){
+
                 if($row['supplierId'] == $supplier){
-                    $supList .= "<option selected value='{$row['supplierId']}'>{$row['sup_name']}</option>";  
+
+                    $supList .= "<option selected value='{$row['supplierId']}'>
+
+                    {$row['sup_name']}</option>";  
+
                 }else{
                     $supList .= "<option value='{$row['supplierId']}'>{$row['sup_name']}</option>";
-                }}                
-            }else{
-            $supList = "<li>There are no suppliers registered</li>";
-        }
-    } else {
+                }
+            } 
+
+        }else{
+             $supList = "<li>There are no suppliers registered</li>";
+            }
+
+
+    }else{
         header("location: error.php");
     }
     $connect->close();
-} else {
+ }else{
     header("location: error.php");
 }
 ?>
@@ -87,15 +100,6 @@ if ($_GET['id']) {
                <td><input class='form-control' type="text" step="any" name= "description" placeholder="Description" value="<?php echo $description ?>" /></td>
            </tr>
 
-
-
-
-
-
-
-
-
-
            <tr>
                <th>Availability</th>
                <td><input class='form-control' type="number" step="any" name= "availability" placeholder="Availability" value="<?php echo $availability?>" /></td>
@@ -120,15 +124,6 @@ if ($_GET['id']) {
                <th>Hobbies</th>
                <td><input class='form-control' type="text" step="any" name= "hobbies" placeholder="Hobbies" value="<?php echo $hobbies?>" /></td>
            </tr>
-
-
-htmlcharectes()
-
-
-
-
-
-
            <tr>
                <th>Supplier</th>
                <td>

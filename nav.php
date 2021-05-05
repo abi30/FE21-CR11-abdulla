@@ -23,18 +23,7 @@
         </div>
     </div>
   </nav>
-    <!-- <div  class="hero_img"> -->
-   
-
-    
-    <!-- <div class ="note">
-   <h1>The <span style="color: rgb(245, 237, 6);">BIGLIBRARY</span></h1>
-              <h4> <span style="color: rgb(245, 237, 6);">“</span> Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.<span style="color: rgb(245, 237, 6);">”</span> <br></h4>
-             
-     <h1>-Charles W. Eliot</h1>
-    </div>    -->
-
-
+  
 
  <!-- </div> -->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

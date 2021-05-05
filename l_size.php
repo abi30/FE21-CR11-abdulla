@@ -42,7 +42,7 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     </head>
     <body>
 
-
+                                  <!-- navbar -->
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
@@ -89,8 +89,10 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
            ?>
         </div>
     </div>
-
   </nav>
+
+
+
 
 
 
@@ -103,23 +105,6 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     </div>
 
 
-
-
-
-    
-   
-    
-    
-   
-        
-
-    
-
-      
-       
-
-
-  
   
    
       <?php
@@ -130,10 +115,6 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
        
                   while($row2 = $result->fetch_assoc()) {
               
-
-
-
-
 
 
 
@@ -155,23 +136,17 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
           <h6 class="card-text">Size :<small>' .$row2["size"].'</small></h6> 
           <hr>
 
-            
-
               </div>
-
 
               <div class="card-footer">
                 <h6>Klick More to show detailed information of this animal.</h6>
               <a href="details.php?id='.$row2['id'].'"><button class="btn btn-warning border border-dark" type="button">More</button></a><hr>
-
 
               </div>
           </div>
           </div>
       
               ';
-
-
 
           };
       } else {
@@ -181,8 +156,6 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 ?>;
 
 
-
-
 <div class="container w-100 mt-3" >   
 
 
@@ -190,31 +163,13 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 <p  class='h2'>All Gallery's Items</p>
 <div class="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-3">
-  
-
-
 
  
        <?=$tbody;?>
   
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
+    </div>
+    </div>
 
     </body>
 </html>

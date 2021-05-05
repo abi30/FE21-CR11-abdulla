@@ -88,7 +88,7 @@ if(mysqli_num_rows($result)  > 0) {
    
 
 
-    
+                        <!-- navbar -->
 
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-primary">
@@ -100,10 +100,6 @@ if(mysqli_num_rows($result)  > 0) {
           <a class="navbar-brand" href="index.php"><span style="color: rgb(0, 0, 0);font-size: larger;font-weight: bolder; ">Adopt </span> <span style="color: rgb(255, 255, 254); font-style: italic;font-size: larger;font-weight: bolder; "> a Pet</span>
           <span style="color: rgb(255, 255, 254);font-size: larger;font-weight: bolder; ">ONLINE</span></a>
 
-         
-          
-        
-        
        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
             <a class="nav-link" id="desc" type="button" href="dashboard.php" >Dashboard</a>
@@ -135,15 +131,8 @@ if (isset($_SESSION["adm"])) {
 }
 
 $connect->close();
-
         ?> 
   <a class="btn btn-danger border border-white" id="search" type="button" href="logout.php?logout">Sign Out</a>
-
-
-
-          
-              
-       
     </div>
   </nav>
 
@@ -154,7 +143,7 @@ $connect->close();
 
            <div class='mb-3'>
   
-                <!-- <a href= "create.php" ><button class='btn btn-primary'type = "button" >Add product</button></a> -->
+           
             </div>
            <p  class='h2'>All Gallery's Items</p>
            <div class="table-responsive w-100">
@@ -180,11 +169,9 @@ $connect->close();
 
                    </tr>
                </thead>
-               <tbody>
-              
-             
+                <tbody>
                    <?=$tbody;?>
-               </tbody>
+                </tbody>
             </table>
        </div>
        </div>

@@ -95,7 +95,7 @@ if ($_POST) {
 
 
 
-    // $sql = "INSERT INTO animals (name, price, picture, fk_supplierId) VALUES ('$name', $price, '$picture->fileName', $supplier)";
+   
 
 
 
@@ -106,16 +106,15 @@ if ($_POST) {
 
         $class = "success";
         $message = "The entry below was successfully created <br>
-                        <table class='table w-50'><tr>
-                        <td>Name: $name </td>
-                        <td>Orizin $origin </td>
-                        <td>Location: $location </td>
-                        <td>Size: $size </td>
-                        <td>Available: $availability </td>
-                        <td>Age: $age Y </td>
-                      
-                        </tr></table><hr>
-                        ";
+                <table class='table w-50'><tr>
+                <td>Name: $name </td>
+                <td>Orizin $origin </td>
+                <td>Location: $location </td>
+                <td>Size: $size </td>
+                <td>Available: $availability </td>
+                <td>Age: $age Y </td>
+                </tr></table><hr>
+                ";
         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     } else {
         $class = "danger";
@@ -127,6 +126,10 @@ if ($_POST) {
     header("location: ../error.php");
 }
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -102,14 +102,6 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
         <h2> Hi <?php echo $row['first_name' ]; ?> ! Here you can find all Dinos older than 8 years.</h2>
     </div>
 
-
-
-
-
-    
-
-  
-   
       <?php
               $sql = "SELECT * FROM animals WHERE  age > 8 ";
               $result = $connect->query($sql);
@@ -118,11 +110,6 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
        
                   while($row2 = $result->fetch_assoc()) {
               
-
-
-
-
-
 
 
       $tbody .= '
@@ -169,8 +156,6 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
       }
       $connect->close();
 ?>;
-
-
 
 
 <div class="container w-100 mt-3" >   

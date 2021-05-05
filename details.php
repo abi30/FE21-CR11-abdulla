@@ -98,64 +98,53 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
            <div class="container-fluid">
 
 
+                          <!-- navbar -->
 
-
-           <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-primary">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="index.php"><span style="color: rgb(0, 0, 0);font-size: larger;font-weight: bolder; ">Adopt </span> <span style="color: rgb(255, 255, 254); font-style: italic;font-size: larger;font-weight: bolder; "> a Pet</span>
-          <span style="color: rgb(255, 255, 254);font-size: larger;font-weight: bolder; ">ONLINE</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="index.php"><span style="color: rgb(0, 0, 0);font-size: larger;font-weight: bolder; ">Adopt </span> <span style="color: rgb(255, 255, 254); font-style: italic;font-size: larger;font-weight: bolder; "> a Pet</span>
+      <span style="color: rgb(255, 255, 254);font-size: larger;font-weight: bolder; ">ONLINE</span></a>
 
-           <?php 
+      <?php 
 
-            if(isset($_SESSION['user'])){
+      if(isset($_SESSION['user'])){
 
-              
-            echo'
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                 
-                 <li class="nav-item">
-                 <a class="nav-link" id="asc" type="button" href="home.php">Home</a>
-                 </li>
-                 <li class="nav-item">
 
-                 <a class="nav-link"aria-current="page" href="update.php?id='.$row['id'].'">profile setting</a>
-                
-                 </li>
-                 <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 Sizes
-               </a>
-               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                 <li><a class="dropdown-item" href="senior.php">Senior</a></li>
-                 <li><a class="dropdown-item" href="s_size.php">S_size</a></li>
-                 <li><a class="dropdown-item" href="l_size.php">L_size</a></li>
-               </ul>
-             </li>
-                 </ul>
-                  <p class="">Hi '.$row['first_name'].'!</p>
-                  <a href="home.php">
-                  <img class="m-2"src="pictures/'.$row['picture'].'" style = " width:50px; height:50px; border-radius:50%;"> </a>';
+      echo'
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+      <a class="nav-link" id="asc" type="button" href="home.php">Home</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link"aria-current="page" href="update.php?id='.$row['id'].'">profile setting</a>
+      </li>
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Sizes
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+      <li><a class="dropdown-item" href="senior.php">Senior</a></li>
+      <li><a class="dropdown-item" href="s_size.php">S_size</a></li>
+      <li><a class="dropdown-item" href="l_size.php">L_size</a></li>
+      </ul>
+      </li>
+      </ul>
+      <p class="">Hi '.$row['first_name'].'!</p>
+      <a href="home.php">
+      <img class="m-2"src="pictures/'.$row['picture'].'" style = " width:50px; height:50px; border-radius:50%;"> </a>';
+      echo'<a class="btn btn-danger border border-white" id="search" type="button" href="logout.php?logout">Sign Out</a>';
+      }
 
-                   echo'<a class="btn btn-danger border border-white" id="search" type="button" href="logout.php?logout">Sign Out</a>';
-        }
-
-        $connect->close();
-           ?>
-        </div>
+      $connect->close();
+      ?>
+      </div>
     </div>
 
   </nav>
-
-
-
-
-   
-
-
 
 
 </div>
@@ -169,13 +158,6 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
 <div class="container">
-
-  
-
-
-   
-
-
        <div class="col text-center d-flex justify-content-center">
        <div class="card text-center rounded-3 m-5 " style="width: 25rem;">
        <img class="card-img-top  m-auto" src="pictures/<?php echo $picture?> ">
@@ -197,14 +179,10 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
               
                </div>
            </div>
-
         </div>
-      
-
 </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
-
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
